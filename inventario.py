@@ -66,8 +66,5 @@ def menuInventario():
         elif opcion == '3':
             eliminarInventario()
         elif opcion == '0':
-            print("Gracias por visitar Katstore Tec Online. ¡Hasta luego!")
-            break
+            return
         
-
-menuInventario()

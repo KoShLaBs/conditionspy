@@ -83,8 +83,5 @@ def menuCliente():
         elif opcion == '4':
             verCarrito()
         elif opcion == '0':
-            print("Gracias por visitar Katstore Tec Online. ¡Hasta luego!")
-            break
+            return
         
-
-menuCliente()
