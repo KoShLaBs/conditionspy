@@ -3,29 +3,29 @@ import random
 import time
 
 def instrucciones():
-    print("\nPara este juego tenemos que seguir varias instrucciones: ")
-    print("1. NO permitas que se te acaben los ingredientes.")
+    print("\nPara este juego tenemos que seguir varias instrucciones: ⚠️")
+    print("1. NO permitas que se te acaben los ingredientes. ❌")
     time.sleep(2)
-    print("2. NO te endeudes más de lo que puedes pagar.")
+    print("2. NO te endeudes más de lo que puedes pagar. ⚖️")
     time.sleep(2)
-    print("3. De ti depende el éxito de tu negocio.")
+    print("3. De ti depende el éxito de tu negocio. 💼")
     time.sleep(2)
-    print("¡Que inicie el juego!\n")
+    print("¡Que inicie el juego!\n 🎮")
 
 
 global ingredientes
 ingredientes = {"harina": 5, "azucar": 4, "huevos": 3, "leche": 2, "mantequilla": 6}
 
 def mostrarIngredientes():
-    print("\nIngredientes disponibles:")
+    print("\nIngredientes disponibles: 🧾")
     for ingrediente, cantidad in ingredientes.items():
-        print(f"{ingrediente}: {cantidad} unidades")
+        print(f"{ingrediente}: {cantidad} unidades 📦")
     
 def receta():
-    print("\nReceta para hacer un pastel (un piso):")
-    print("1. Mezcla 2 unidades de harina, 1 unidad de azucar, 1 huevo, 1 unidad de leche y 1 unidad de mantequilla.")
-    print("2. Hornea la mezcla a 180 grados Celsius durante 30 minutos.")
-    print("3. Deja enfriar y decora al gusto.")
+    print("\nReceta para hacer un pastel (un piso): 📜")
+    print("1. Mezcla 2 unidades de harina, 1 unidad de azucar, 1 huevo, 1 unidad de leche y 1 unidad de mantequilla. 🥣")
+    print("2. Hornea la mezcla a 180 grados Celsius durante 30 minutos. 🔥")
+    print("3. Deja enfriar y decora al gusto. 🎨")
     
 
 global ordenes
@@ -38,38 +38,38 @@ def dinero():
 
 def tienda():
     mostrarIngredientes()
-    mone = str (dinero())
-    print("\nTu dinero                          $"  +mone)
-    print("\nBienvenido a la tienda de ingredientes.")
-    print("\nPrecios por unidad:")
-    print("Harina: $2")
-    print("Azucar: $1.5")
-    print("Huevos: $0.5")
-    print("Leche: $1")
-    print("Mantequilla: $3")
-    print("\nPuedes comprar ingredientes para reponer tu inventario.")
+    mone = str(dinero())
+    print("\nTu dinero                          $"  +mone + " 💰")
+    print("\nBienvenido a la tienda de ingredientes. 🏬")
+    print("\nPrecios por unidad: 🧾")
+    print("Harina: $2 🌾")
+    print("Azucar: $1.5 🍚")
+    print("Huevos: $0.5 🥚")
+    print("Leche: $1 🥛")
+    print("Mantequilla: $3 🧈")
+    print("\nPuedes comprar ingredientes para reponer tu inventario. 🛒")
     
     while True:
-        print("1. Comprar ingredientes")
-        print("0. Salir de la tienda")
+        print("1. Comprar ingredientes 🛒")
+        print("0. Salir de la tienda ⛔")
         opcion = input("\nSelecciona una opción: ")
         if opcion not in ["0", "1"]:
             continue
         if opcion == "1":
             comprar()
         elif opcion == "0":
-            print("Saliendo de la tienda.")
+            print("Saliendo de la tienda. 👋")
             return
 
 
 def juego():
     aleatorio = choice(list(ordenes.keys()))
-    print(f"\nNuestr@ cliente: {aleatorio}, necesita: {ordenes[aleatorio]} pisos en su pastel.")
-    print("¡Manos a la obra!\n")
+    print(f"\nNuestr@ cliente: {aleatorio}, necesita: {ordenes[aleatorio]} pisos en su pastel. 🎂")
+    print("¡Manos a la obra!\n 🛠️")
     
     while True:
-        print("1. Hacer pastel")
-        print("0. Rendirse y salir del juego")
+        print("1. Hacer pastel 🍰")
+        print("0. Rendirse y salir del juego 🏳️")
         opcion = input("Selecciona una opción del menú: ")
         if opcion not in ["0", "1"]:
             continue
@@ -77,23 +77,23 @@ def juego():
             hacerPastel(aleatorio)
             return
         elif opcion == "0":
-            print("Gracias por jugar. ¡Hasta la próxima!")
+            print("Gracias por jugar. ¡Hasta la próxima! 👋")
             break
 
 
 def comprar():
     while True:
-        ingrediente = input("\nDeme el ingrediente a comprar: ")
+        ingrediente = input("\nDeme el ingrediente a comprar: ").strip().lower()
         if ingrediente in ingredientes:
             break
         else:
-            print("Ingrediente no disponible. Por favor, elige otro.")
+            print("Ingrediente no disponible. Por favor, elige otro. ❌")
     while True:
         cantidad = int(input("Deme la cantidad a adicionar: "))
         if cantidad > 0:
             break
         else:
-            print("Cantidad inválida. Por favor, ingresa una cantidad positiva.")
+            print("Cantidad inválida. Por favor, ingresa una cantidad positiva. ⚠️")
     cantidadNueva = ingredientes[ingrediente] + cantidad
     ingredienteNuevo = {ingrediente: cantidadNueva}
     ingredientes.update(ingredienteNuevo)
@@ -108,8 +108,8 @@ def comprar():
     elif ingrediente == "mantequilla":
         costo = 3 * cantidad
     dineroA.append(-costo)
-    print(f"\nHas comprado {cantidad} unidades de {ingrediente} por ${costo}.")
-    print(f"Dinero restante: ${dinero()}")
+    print(f"\nHas comprado {cantidad} unidades de {ingrediente} por ${costo}. 🧾")
+    print(f"Dinero restante: ${dinero()} 💰\n")
 
 
 def hacerPastel(aleatorio):
@@ -127,45 +127,44 @@ def hacerPastel(aleatorio):
         
         print()
         time.sleep(2)
-        print("   i i i i i i")
+        print("   i i i i i i 🍰")
         time.sleep(2)
-        print("  |~~~~~~~~~~~|")
+        print("  |~~~~~~~~~~~| 🍰")
         time.sleep(2)
-        print("__|___________|__")
+        print("__|___________|__ 🍰")
         time.sleep(2)
-        print("|^^^^^^^^^^^^^^^^^|")
+        print("|^^^^^^^^^^^^^^^^^| 🎉")
         print("|                 |")
         time.sleep(2)
-        print("|     PASTEL      |")      
+        print("|     PASTEL      | 🎂")      
         time.sleep(2)   
         print("|_________________|")
         time.sleep(2)
 
-        print("\n¡Pastel preparado con éxito!")
-        print(f"Has preparado un pastel de {ordenes[aleatorio]} pisos para {aleatorio}.")
-        print("Has ganado dinero: +$20")
+        print("\n¡Pastel preparado con éxito! ✅")
+        print(f"Has preparado un pastel de {ordenes[aleatorio]} pisos para {aleatorio}. 🎉")
+        print("Has ganado dinero: +$20 💵")
         
         dineroC = 20
         dineroA.append(dineroC)
     else:
         print()
         time.sleep(2)
-        print("   i i i i i i")
+        print("   i i i i i i ❌")
         time.sleep(2)
         print("|^^^^^^^^^^^^^^^^^|")
         print("|                 |")
         time.sleep(2)
-        print("|    NO PASTEL    |")      
+        print("|    NO PASTEL    | 😢")      
         time.sleep(2)   
         print("No hubo pastel :c")
-        print("Perdiste dinero :c -$10")
+        print("Perdiste dinero :c -$10 💸")
         dineroC = -10
         dineroA.append(dineroC)
 
 def menuJuego():
-    print("\nMenú del Juego:")
-    print("1. Ver receta")
-    print("2. Elegir una orden de pastel")
-    print("3. Ir a la tienda de ingredientes")
-    print("0. Rendirse y salir del juego")
-
+    print("\nMenú del Juego: 📋")
+    print("1. Ver receta 📖")
+    print("2. Elegir una orden de pastel 🧾")
+    print("3. Ir a la tienda de ingredientes 🏬")
+    print("0. Rendirse y salir del juego 🏁")
