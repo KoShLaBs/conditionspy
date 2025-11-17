@@ -2,7 +2,7 @@ import time
 from bases import instrucciones, menuJuego, juego, mostrarIngredientes, receta, tienda
 
 def tuNombre():
-    nombre = input("¿Cuál es tu nombre? ")
+    nombre = input("\n¿Cuál es tu nombre? ")
     print(f"¡Hola, {nombre}! Bienvenido al juego de la pastelería.")
     return nombre
 
@@ -21,19 +21,15 @@ def iniciar_juego():
     bienvenida(nombre)
     while True:
         menuJuego()
-        opcion = input("Selecciona una opción del menú: ")
-        if opcion not in ["0", "1", "2", "3", "4", "5"]:
+        opcion = input("\nSelecciona una opción del menú: ")
+        if opcion not in ["0", "1", "2", "3"]:
             continue
         
         if opcion == "1":
-            juego()
-        elif opcion == "2":
-            instrucciones()
-        elif opcion == "3":
-            mostrarIngredientes()
-        elif opcion == "4":
             receta()
-        elif opcion == "5":
+        elif opcion == "2":
+            juego()
+        elif opcion == "3":
             tienda()
         elif opcion == "0":
             print("Gracias por jugar. ¡Hasta la próxima!")
